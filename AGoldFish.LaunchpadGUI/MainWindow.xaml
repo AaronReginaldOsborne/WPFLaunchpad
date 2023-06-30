@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:AGoldFish.LaunchpadGUI"
         mc:Ignorable="d"
          xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-        Title="EDI Launchpad" Height="620" Width="1020"  WindowStartupLocation="CenterScreen" WindowStyle="None" AllowsTransparency="True" Icon="imgs/logo.png">
+        Title="Launchpad" Height="620" Width="1020"  WindowStartupLocation="CenterScreen" WindowStyle="None" AllowsTransparency="True" Icon="imgs/icon.png">
     <Window.Background>
         <SolidColorBrush Opacity="0.0" Color="White"/>
     </Window.Background>
