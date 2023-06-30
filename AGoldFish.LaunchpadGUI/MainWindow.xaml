@@ -1,0 +1,191 @@
+﻿<Window x:Class="AGoldFish.LaunchpadGUI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AGoldFish.LaunchpadGUI"
+        mc:Ignorable="d"
+         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        Title="EDI Launchpad" Height="620" Width="1020"  WindowStartupLocation="CenterScreen" WindowStyle="None" AllowsTransparency="True" Icon="imgs/logo.png">
+    <Window.Background>
+        <SolidColorBrush Opacity="0.0" Color="White"/>
+    </Window.Background>
+    <Window.Resources>
+        <Storyboard x:Key="OpenMenu">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[2].(RotateTransform.Angle)" Storyboard.TargetName="rectangle">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="43.5"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[2].(RotateTransform.Angle)" Storyboard.TargetName="rectangle1">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="-43.5"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="rectangle2">
+                <EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="GridMenu">
+                <EasingDoubleKeyFrame KeyTime="0" Value="70"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="200"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="StackMenu">
+                <EasingDoubleKeyFrame KeyTime="0" Value="70"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="200"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Height)" Storyboard.TargetName="GridLogo">
+                <EasingDoubleKeyFrame KeyTime="0" Value="70"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="100"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="CloseMenu">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[2].(RotateTransform.Angle)" Storyboard.TargetName="rectangle">
+                <EasingDoubleKeyFrame KeyTime="0" Value="43.5"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[2].(RotateTransform.Angle)" Storyboard.TargetName="rectangle1">
+                <EasingDoubleKeyFrame KeyTime="0" Value="-43.5"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="rectangle2">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="GridMenu">
+                <EasingDoubleKeyFrame KeyTime="0" Value="200"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="70"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="StackMenu">
+                <EasingDoubleKeyFrame KeyTime="0" Value="200"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="70"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Height)" Storyboard.TargetName="GridLogo">
+                <EasingDoubleKeyFrame KeyTime="0" Value="100"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="70"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+    </Window.Resources>
+    <Grid MouseDown="Grid_MouseDown">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="200"/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel VerticalAlignment="Top">
+            <Grid Background="#FFC00000" Height="10"/>
+            <Grid Height="30" Background="Black" />
+        </StackPanel>
+
+        <StackPanel Grid.Column="0" Grid.Row="1" Background="#FF515151">
+            <Grid Height="100">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Button Style="{StaticResource MaterialDesignFloatingActionAccentButton}" Margin="10" ToolTip="Top left" Height="80" Width="80" FocusVisualStyle="{x:Null}" Background="#FF221E1F">
+                    <materialDesign:PackIcon Kind="MenuUp" Height="auto" Width="auto" />
+                </Button>
+                <Button Style="{StaticResource MaterialDesignFloatingActionAccentButton}" Margin="10" Grid.Column="1" ToolTip="Top left" Height="80" Width="80" FocusVisualStyle="{x:Null}" Background="#FF221E1F">
+                    <materialDesign:PackIcon Kind="MenuDown" Height="auto" Width="auto" />
+                </Button>
+                <Button Style="{StaticResource MaterialDesignFloatingActionAccentButton}" Margin="10" Grid.Column="2" ToolTip="Top left" Height="80" Width="80" FocusVisualStyle="{x:Null}" Background="#FF221E1F">
+                    <materialDesign:PackIcon Kind="MenuLeft" Height="auto" Width="auto" />
+                </Button>
+                <Button Style="{StaticResource MaterialDesignFloatingActionAccentButton}" Margin="10" Grid.Column="3" ToolTip="Top left" Height="80" Width="80" FocusVisualStyle="{x:Null}" Background="#FF221E1F">
+                    <materialDesign:PackIcon Kind="MenuRight" Height="auto" Width="auto" />
+                </Button>
+                <Button Style="{StaticResource MaterialDesignFloatingActionAccentButton}" Margin="10" Grid.Column="4" ToolTip="Top left" Height="80" Width="80" FocusVisualStyle="{x:Null}" Background="#FF221E1F">
+                    <TextBlock Text="Session" />
+                </Button>
+                <Button Style="{StaticResource MaterialDesignFloatingActionAccentButton}" Margin="10" Grid.Column="5" ToolTip="Top left" Height="80" Width="80" FocusVisualStyle="{x:Null}" Background="#FF221E1F">
+                    <TextBlock Text="User 1" />
+                </Button>
+                <Button Style="{StaticResource MaterialDesignFloatingActionAccentButton}" Margin="10" Grid.Column="6" ToolTip="Top left" Height="80" Width="80" FocusVisualStyle="{x:Null}" Background="#FF221E1F">
+                    <TextBlock Text="User 2" />
+                </Button>
+                <Button Style="{StaticResource MaterialDesignFloatingActionAccentButton}" Margin="10" Grid.Column="7" ToolTip="Top left" Height="80" Width="80"  FocusVisualStyle="{x:Null}" Background="#FF221E1F">
+                    <TextBlock Text="Mixer" />
+                </Button>
+            </Grid>
+            <Grid x:Name="LaunchpadGrid" />
+        </StackPanel>
+        <StackPanel x:Name="StackMenu" VerticalAlignment="Top" Grid.Column="1" HorizontalAlignment="Left" Width="200" Height="40" Background="Black" >
+            <Grid Background="#FFC00000" Height="10"/>
+            <Grid >
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="5" >
+                    <Button Width="20" Height="20" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" Foreground="Gray" Click="ButtonMinScreen_Click">
+                        <materialDesign:PackIcon Kind="WindowMinimize"/>
+                    </Button>
+                    <Button Width="20" Height="20" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" Foreground="Gray" Click="ButtonFullScreen_Click" >
+                        <materialDesign:PackIcon Kind="WindowMaximize"/>
+                    </Button>
+                    <Button x:Name="ButtonFechar" Width="20" Height="20" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" Foreground="Gray" Click="ButtonQuit_Click" >
+                        <materialDesign:PackIcon Kind="Power"/>
+                    </Button>
+                </StackPanel>
+            </Grid>
+        </StackPanel>
+
+        <Grid x:Name="GridMenu" HorizontalAlignment="Left" Width="200" Background="#FFC00000" Grid.Column="1" Grid.Row="1">
+            <StackPanel>
+                <Grid x:Name="GridLogo" Height="100" Background="Black" >
+                    <Rectangle Height="75" Width="120" Margin="40,15,40,0">
+                        <Rectangle.Fill>
+                            <ImageBrush ImageSource="imgs/logo.png"/>
+                        </Rectangle.Fill>
+                    </Rectangle>
+                </Grid>
+                <ListView x:Name="ListViewMenu" ScrollViewer.HorizontalScrollBarVisibility="Disabled" >
+                    <ListView.ItemContainerStyle>
+                        <Style TargetType="ListViewItem">
+                            <EventSetter Event="PreviewMouseLeftButtonDown" Handler="OnMouseLeftButtonDown"/>
+                        </Style>
+                    </ListView.ItemContainerStyle>
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal" Height="56">
+                                <materialDesign:PackIcon Kind="{Binding Path=Icon}" Width="30" Height="30" Margin="10" VerticalAlignment="Center"/>
+                                <TextBlock Text="{Binding Path=Name}" Margin="20 0" FontSize="15" VerticalAlignment="Center"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackPanel>
+            <Button x:Name="ButtonMenu" HorizontalAlignment="Right" VerticalAlignment="Top" Background="{x:Null}" BorderBrush="{x:Null}" Width="70" Height="70" Click="ButtonMenu_Click" FocusVisualStyle="{x:Null}">
+                <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Rectangle x:Name="rectangle" Width="30" Height="5" Margin="0 0 0 0" Fill="#FF515151" HorizontalAlignment="Center" VerticalAlignment="Top" RenderTransformOrigin="-0,0.5">
+                        <Rectangle.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform Angle="43.5"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Rectangle.RenderTransform>
+                    </Rectangle>
+                    <Rectangle x:Name="rectangle1" Width="30" Height="5" Margin="0 20 0 0 " Fill="#FF515151" HorizontalAlignment="Center" VerticalAlignment="Top" RenderTransformOrigin="-0,0.5">
+                        <Rectangle.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform Angle="-43.5"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Rectangle.RenderTransform>
+                    </Rectangle>
+                    <Rectangle x:Name="rectangle2" Width="30" Height="5" Margin="0 10 0 0" Fill="#FF515151" HorizontalAlignment="Center" VerticalAlignment="Top" Opacity="0"/>
+                </Grid>
+            </Button>
+
+        </Grid>
+    </Grid>
+</Window>
